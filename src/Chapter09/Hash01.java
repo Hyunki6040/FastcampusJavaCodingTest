@@ -4,19 +4,19 @@ public class Hash01 {
     public static void main(String[] args){
         String key = "hyungi";
         
-        myHash hash = new myHash(20);
+        MyHash hash = new MyHash(20);
         hash.saveData("hyungi", "01000000000");
-        hash.saveData("hyun", "01011111111");
+        hash.saveData("gim", "01011111111");
         
         System.out.println("hyungi : " + hash.getData("hyungi"));
-        System.out.println("hyun : " + hash.getData("hyun"));
+        System.out.println("gim : " + hash.getData("gim"));
     }
     
-    public class myHash{
+    static class MyHash{
         public Slot[] hashTable;
         
-        public myHash(Integer size){
-            hashTable = new Slot[size];
+        public MyHash(int size){
+            this.hashTable = new Slot[size];
         }
         
         public class Slot{
@@ -28,7 +28,7 @@ public class Hash01 {
         }
         
         public int hashFunc(String input){
-            int address = ((int) key.charAt(0)) % 20;
+            int address = ((int) input.charAt(0)) % 20;
             return address;
         }
         
