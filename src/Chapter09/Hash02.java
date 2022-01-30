@@ -1,5 +1,6 @@
 package Chapter09;
 
+//개방 해싱, open hashing 기법 중 Chaining기법을 사용한 충돌해결
 public class Hash02 {
     public static void main(String[] args){
         myHash hash = new myHash(20);
